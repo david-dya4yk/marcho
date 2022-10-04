@@ -141,6 +141,7 @@ footer {
   &__form-btn {
     @extend %btn;
     cursor: pointer;
+    border: none;
   }
 }
 .footer-bottom {
@@ -543,6 +544,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    box-shadow: 0px 10px 40px 0px rgba(187, 187, 187, 0.3);
+
     span {
       font-size: 48px;
       @extend %roboto-700;
@@ -568,6 +571,95 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+.blog {
+  padding: 50px 0 160px;
+  background-image: url("../images/decor/blog.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    max-width: 370px;
+    border: 1px solid #ececec;
+    transition: all 0.3s;
+    &:hover {
+      border: none;
+      box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+      .blog__item-link {
+        color: $accent;
+        &::after {
+          background-image: url("../images/icons/arrow-accent.svg");
+        }
+      }
+    }
+  }
+
+  &__item-imglink {
+    display: block;
+    img {
+      height: 280px;
+      object-fit: cover;
+    }
+  }
+
+  &__item-box {
+    padding: 30px 40px;
+  }
+
+  &__item-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__item-author,
+  &__item-date {
+    padding-left: 30px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 4px;
+    }
+  }
+
+  &__item-author::before {
+    background-image: url("../images/icons/user-gray.svg");
+  }
+
+  &__item-date::before {
+    background-image: url("../images/icons/date.svg");
+  }
+
+  &__item-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: $title;
+    @extend %roboto-400;
+  }
+
+  &__item-link {
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  &__item-link::after {
+    content: "";
+    width: 10px;
+    height: 8px;
+    background-image: url("../images/icons/arrow-gray.svg");
+    position: absolute;
+    top: 7px;
+    right: -15px;
   }
 }
 @import "media";
